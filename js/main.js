@@ -28,6 +28,7 @@ function toggleAccordion(button) {
 function loadManual(item) {
     const embedUrl = item.getAttribute('data-embed');
     const title = item.getAttribute('data-title');
+    const pdfUrl = item.getAttribute('data-pdf');
     
     // Remover clase active de todos los items
     document.querySelectorAll('.nav-item').forEach(el => {
@@ -39,6 +40,15 @@ function loadManual(item) {
     
     // Actualizar título
     document.getElementById('current-title').textContent = title;
+    
+    // Mostrar/ocultar botón de descarga
+    const downloadBtn = document.getElementById('download-btn');
+    if (pdfUrl) {
+        downloadBtn.href = pdfUrl;
+        downloadBtn.style.display = 'flex';
+    } else {
+        downloadBtn.style.display = 'none';
+    }
     
     // Ocultar pantalla de bienvenida
     document.getElementById('welcome-screen').style.display = 'none';
