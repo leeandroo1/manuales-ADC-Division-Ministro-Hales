@@ -1,0 +1,328 @@
+/* =============================================
+   ACMH Power Apps - Manuales de Usuario
+   Versión: Panel lateral con acordeón
+   ============================================= */
+
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: #f5f7fa;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* =============================================
+   Sidebar (Panel lateral)
+   ============================================= */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+    padding: 24px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-header h1 {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.sidebar-header p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+}
+
+.sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 0;
+}
+
+/* =============================================
+   Acordeón de módulos
+   ============================================= */
+.module-accordion {
+    margin-bottom: 4px;
+}
+
+.accordion-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.accordion-toggle:hover {
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+}
+
+.accordion-toggle.active {
+    color: #4facfe;
+}
+
+.accordion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.accordion-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.accordion-toggle.active .accordion-icon {
+    transform: rotate(90deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion-content.open {
+    max-height: 500px;
+}
+
+/* =============================================
+   Items de navegación (roles)
+   ============================================= */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px 12px 48px;
+    color: rgba(255,255,255,0.65);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.nav-item:hover {
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.9);
+}
+
+.nav-item.active {
+    background: rgba(79, 172, 254, 0.1);
+    color: #4facfe;
+    border-left-color: #4facfe;
+}
+
+.nav-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.nav-dot.admin {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.nav-dot.gestor {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+}
+
+.nav-dot.supervisor {
+    background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+}
+
+.nav-dot.usuario {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.nav-dot.auditor {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+/* =============================================
+   Contenido principal
+   ============================================= */
+.main-content {
+    margin-left: 280px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.3s ease;
+}
+
+.topbar {
+    height: 60px;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 16px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.menu-toggle:hover {
+    background: #f3f4f6;
+}
+
+.menu-toggle svg {
+    width: 24px;
+    height: 24px;
+    color: #374151;
+}
+
+.topbar-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =============================================
+   Pantalla de bienvenida
+   ============================================= */
+.welcome-screen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.welcome-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.welcome-icon svg {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+}
+
+.welcome-screen h2 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.welcome-screen p {
+    color: #6b7280;
+    max-width: 300px;
+}
+
+/* =============================================
+   Contenedor del embed
+   ============================================= */
+.embed-container {
+    flex: 1;
+    padding: 16px;
+    background: #f5f7fa;
+}
+
+.embed-container iframe {
+    width: 100%;
+    height: calc(100vh - 92px);
+    border: none;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* =============================================
+   Overlay para móvil
+   ============================================= */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .embed-container iframe {
+        height: calc(100vh - 92px);
+        border-radius: 8px;
+    }
+
+    .embed-container {
+        padding: 12px;
+    }
+}

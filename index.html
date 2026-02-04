@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manuales de usuario para ACMH Power Apps">
+    <title>Manuales - ACMH Power Apps</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Overlay para móvil -->
+    <div class="overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Panel lateral -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>📚 ACMH Power Apps</h1>
+            <p>Manuales de usuario</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            
+            <!-- =============================================
+                 MÓDULO PROVISIONES
+            ============================================= -->
+            <div class="module-accordion">
+                <button class="accordion-toggle active" onclick="toggleAccordion(this)">
+                    <span class="accordion-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </span>
+                    <span>Módulo Provisiones</span>
+                </button>
+                <div class="accordion-content open">
+                    
+                    <a class="nav-item" onclick="loadManual(this)"
+                       data-embed="https://app.tango.us/app/embed/6bab6867-4b12-4c32-a7ef-f9fbd468a7ee"
+                       data-title="Provisiones - Administrador de Contrato">
+                        <span class="nav-dot admin"></span>
+                        Administrador de Contrato
+                    </a>
+                    
+                    <a class="nav-item" onclick="loadManual(this)"
+                       data-embed="https://app.tango.us/app/embed/b7dea5d3-41fe-4257-b455-4c3aa23e7566"
+                       data-title="Provisiones - Gestor Control de Gestión">
+                        <span class="nav-dot gestor"></span>
+                        Gestor Control de Gestión
+                    </a>
+                    
+                </div>
+            </div>
+
+            <!-- =============================================
+                 PLANTILLA PARA NUEVO MÓDULO
+                 (Copia este bloque completo)
+            =============================================
+            
+            <div class="module-accordion">
+                <button class="accordion-toggle" onclick="toggleAccordion(this)">
+                    <span class="accordion-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </span>
+                    <span>Nombre del Módulo</span>
+                </button>
+                <div class="accordion-content">
+                    
+                    <a class="nav-item" onclick="loadManual(this)"
+                       data-embed="URL_TANGO_AQUI"
+                       data-title="Módulo - Rol">
+                        <span class="nav-dot admin"></span>
+                        Nombre del Rol
+                    </a>
+                    
+                </div>
+            </div>
+            
+            ============================================= -->
+
+        </nav>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <header class="topbar">
+            <button class="menu-toggle" onclick="toggleSidebar()">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <span class="topbar-title" id="current-title">Selecciona un manual</span>
+        </header>
+
+        <div class="content-area" id="content-area">
+            <!-- Pantalla de bienvenida -->
+            <div class="welcome-screen" id="welcome-screen">
+                <div class="welcome-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <h2>Bienvenido</h2>
+                <p>Selecciona un manual del menú lateral para comenzar.</p>
+            </div>
+
+            <!-- Contenedor del iframe -->
+            <div class="embed-container" id="embed-container" style="display: none;">
+                <iframe id="manual-iframe" src="" allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
