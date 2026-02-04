@@ -35,15 +35,17 @@
                 <div class="accordion-content open">
                     
                     <a class="nav-item" onclick="loadManual(this)"
-                       data-embed="https://app.tango.us/app/embed/6bab6867-4b12-4c32-a7ef-f9fbd468a7ee"
-                       data-title="Provisiones - Administrador de Contrato">
+                    data-embed="https://app.tango.us/app/embed/6bab6867-4b12-4c32-a7ef-f9fbd468a7ee"
+                    data-title="Provisiones - Administrador de Contrato"
+                    data-pdf="docs/provisiones-admin-contrato.pdf">
                         <span class="nav-dot admin"></span>
                         Administrador de Contrato
                     </a>
-                    
+
                     <a class="nav-item" onclick="loadManual(this)"
-                       data-embed="https://app.tango.us/app/embed/b7dea5d3-41fe-4257-b455-4c3aa23e7566"
-                       data-title="Provisiones - Gestor Control de Gestión">
+                    data-embed="https://app.tango.us/app/embed/b7dea5d3-41fe-4257-b455-4c3aa23e7566"
+                    data-title="Provisiones - Gestor Control de Gestión"
+                    data-pdf="docs/provisiones-gestor-control.pdf">
                         <span class="nav-dot gestor"></span>
                         Gestor Control de Gestión
                     </a>
@@ -91,6 +93,12 @@
                 </svg>
             </button>
             <span class="topbar-title" id="current-title">Selecciona un manual</span>
+            <a class="download-btn" id="download-btn" href="#" target="_blank" style="display: none;">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+                Descargar Manual PDF
+            </a>
         </header>
 
         <div class="content-area" id="content-area">
