@@ -326,3 +326,27 @@ body {
         padding: 12px;
     }
 }
+/* Botón descargar PDF */
+.download-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    padding: 8px 16px;
+    background: #4facfe;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.download-btn:hover {
+    background: #3b9aed;
+}
+
+.download-btn svg {
+    width: 16px;
+    height: 16px;
+}
