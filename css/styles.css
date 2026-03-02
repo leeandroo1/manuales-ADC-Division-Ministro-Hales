@@ -26,7 +26,7 @@ body {
     top: 0;
     width: 280px;
     height: 100vh;
-    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    background: #bb5726; /*linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);*/
     display: flex;
     flex-direction: column;
     z-index: 1000;
@@ -46,8 +46,9 @@ body {
 }
 
 .sidebar-header p {
-    color: rgba(255,255,255,0.5);
+    color: #ffffff;
     font-size: 0.8rem;
+    opacity: 0.7;
 }
 
 .sidebar-nav {
@@ -85,7 +86,7 @@ body {
 }
 
 .accordion-toggle.active {
-    color: #4facfe;
+    color: #f4a700;
 }
 
 .accordion-icon {
@@ -122,7 +123,7 @@ body {
     align-items: center;
     gap: 12px;
     padding: 12px 20px 12px 48px;
-    color: rgba(255,255,255,0.65);
+    color: #ffffff;
     font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -135,9 +136,9 @@ body {
 }
 
 .nav-item.active {
-    background: rgba(79, 172, 254, 0.1);
-    color: #4facfe;
-    border-left-color: #4facfe;
+    background: rgba(255, 255, 255, 0.1); /* Fondo sutil para que no se vea desordenado */
+    color: #f4a700; /* Amarillo */
+    border-left-color: #209eb0; /* Turquesa para el indicador lateral */
 }
 
 .nav-dot {
@@ -148,11 +149,11 @@ body {
 }
 
 .nav-dot.admin {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background: #209eb0; /* Turquesa */
 }
 
 .nav-dot.gestor {
-    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    background: #e96c28; /* Naranjo */
 }
 
 .nav-dot.supervisor {
@@ -236,7 +237,7 @@ body {
 .welcome-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background: #209eb0;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -333,7 +334,7 @@ body {
     gap: 8px;
     margin-left: auto;
     padding: 8px 16px;
-    background: #4facfe;
+    background: #e96c28; /* Naranjo */
     color: #fff;
     text-decoration: none;
     border-radius: 6px;
@@ -343,7 +344,7 @@ body {
 }
 
 .download-btn:hover {
-    background: #3b9aed;
+    background: #c75a1f;
 }
 
 .download-btn svg {
